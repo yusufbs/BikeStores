@@ -1,7 +1,14 @@
+using BikeStores.MVC.Conventions;
+using BikeStores.MVC.Providers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services
+    .AddMvc(options => options.Conventions.Add(new GenericControllerRouteConvention()))
+    .ConfigureApplicationPartManager(manager => manager.FeatureProviders.Add(new GenericTypeControllerFeatureProvider()));
 
 var app = builder.Build();
 
