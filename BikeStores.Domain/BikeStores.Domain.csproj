@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <ProjectReference Include="..\BikeStores.Presentation.Generic\BikeStores.Presentation.Generic.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,14 +1,20 @@
-using BikeStores.MVC.Conventions;
-using BikeStores.MVC.Providers;
+using BikeStores.Domain.Data;
+using BikeStores.Domain.Models;
+using BikeStores.Domain.Repositories;
+using BikeStores.Presentation.Generic.Infrastructure;
+using BikeStores.Presentation.Generic.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services
-    .AddMvc(options => options.Conventions.Add(new GenericControllerRouteConvention()))
-    .ConfigureApplicationPartManager(manager => manager.FeatureProviders.Add(new GenericTypeControllerFeatureProvider()));
+builder.Services.AddGenericPresentation();
+
+builder.Services.AddScoped<BikeStoresContext>();
+builder.Services.AddScoped<IGenericRepository<Brand>, BrandRepository>();
+
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
