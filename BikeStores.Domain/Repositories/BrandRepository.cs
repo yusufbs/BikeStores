@@ -40,7 +40,7 @@ namespace BikeStores.Domain.Repositories
 
         public void Insert(Brand entity)
         {
-            _context.Add(entity);
+            _context.Brands.Add(entity);
             Save();
         }
 
@@ -51,7 +51,7 @@ namespace BikeStores.Domain.Repositories
 
         public void Update(Brand entity)
         {
-            _context.Update(entity);
+            _context.Brands.Update(entity);
             Save();
         }
     }

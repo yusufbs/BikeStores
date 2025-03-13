@@ -7,17 +7,17 @@ namespace BikeStores.MVC.Controllers
 {
     public class BrandsController : Controller
     {
-        private readonly IGenericRepository<Brand> _repo;
+        private readonly IGenericRepository<Brand> _repository;
 
-        public BrandsController(IGenericRepository<Brand> repo)
+        public BrandsController(IGenericRepository<Brand> repository)
         {
-            _repo = repo;
+            _repository = repository;
         }
 
         // GET: Brands
         public IActionResult Index()
         {
-            return View(_repo.GetAll());
+            return View(_repository.GetAll());
         }
 
         // GET: Brands/Details/5
@@ -28,7 +28,7 @@ namespace BikeStores.MVC.Controllers
                 return NotFound();
             }
 
-            var brand = _repo.GetById(id.Value);
+            var brand = _repository.GetById(id.Value);
             if (brand == null)
             {
                 return NotFound();
@@ -52,7 +52,7 @@ namespace BikeStores.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                _repo.Insert(brand);
+                _repository.Insert(brand);
                 return RedirectToAction(nameof(Index));
             }
             return View(brand);
@@ -66,7 +66,7 @@ namespace BikeStores.MVC.Controllers
                 return NotFound();
             }
 
-            var brand = _repo.GetById(id.Value);
+            var brand = _repository.GetById(id.Value);
             if (brand == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace BikeStores.MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BrandId,BrandName")] Brand brand)
+        public IActionResult Edit(int id, [Bind("BrandId,BrandName")] Brand brand)
         {
             if (id != brand.BrandId)
             {
@@ -90,11 +90,11 @@ namespace BikeStores.MVC.Controllers
             {
                 try
                 {
-                    _repo.Update(brand);
+                    _repository.Update(brand);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!_repo.Exists(brand.BrandId))
+                    if (!_repository.Exists(brand.BrandId))
                     {
                         return NotFound();
                     }
@@ -116,7 +116,7 @@ namespace BikeStores.MVC.Controllers
                 return NotFound();
             }
 
-            var brand = _repo.GetById(id.Value);
+            var brand = _repository.GetById(id.Value);
             if (brand == null)
             {
                 return NotFound();
@@ -130,7 +130,7 @@ namespace BikeStores.MVC.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            _repo.Delete(id);
+            _repository.Delete(id);
             return RedirectToAction(nameof(Index));
         }
     }

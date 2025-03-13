@@ -28,20 +28,17 @@ public class GenericController<T> : Controller, IGenericController<T> where T : 
     public void Create(T entity)
     {
         _repository.Insert(entity);
-        _repository.Save();
     }
 
     [HttpPut("{id}")]
     public void Update(T entity)
     {
         _repository.Update(entity);
-        _repository.Save();
     }
 
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
         _repository.Delete(id);
-        _repository.Save();
     }
 }

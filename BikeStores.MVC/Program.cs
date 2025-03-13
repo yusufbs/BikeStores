@@ -13,6 +13,8 @@ builder.Services.AddGenericPresentation();
 
 builder.Services.AddScoped<BikeStoresContext>();
 builder.Services.AddScoped<IGenericRepository<Brand>, BrandRepository>();
+builder.Services.AddScoped<IGenericRepository<Category>, CategoryRepository>();
+builder.Services.AddScoped<IGenericRepository<Customer>, CustomerRepository>();
 
 builder.Services.AddHttpClient();
 
