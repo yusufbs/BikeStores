@@ -28,7 +28,8 @@ namespace BikeStores.MVC.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, [Bind("CustomerId,FirstName,LastName,Phone,Email,Street,City,State,ZipCode")] Customer customer)
         {
-            return EditPost(customer, id != customer.CustomerId, customer.CustomerId);
+            var idCheck = id == customer.CustomerId;
+            return EditPost(customer, idCheck, customer.CustomerId);
         }
     }
 }

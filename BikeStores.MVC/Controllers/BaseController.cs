@@ -72,7 +72,7 @@ public class BaseController<T> : Controller where T : class
     // POST: {Entities}/Edit
     public IActionResult EditPost(T entity, bool idCheck, int entityId)
     {
-        if (idCheck)
+        if (!idCheck)
         {
             return NotFound();
         }

@@ -1,20 +1,15 @@
-using BikeStores.Domain.Data;
-using BikeStores.Domain.Models;
-using BikeStores.Domain.Repositories;
+using BikeStores.Domain.Infrastructure;
 using BikeStores.Presentation.Generic.Infrastructure;
-using BikeStores.Presentation.Generic.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddGenericPresentation();
-
-builder.Services.AddScoped<BikeStoresContext>();
-builder.Services.AddScoped<IGenericRepository<Brand>, BrandRepository>();
-builder.Services.AddScoped<IGenericRepository<Category>, CategoryRepository>();
-builder.Services.AddScoped<IGenericRepository<Customer>, CustomerRepository>();
+//custom
+builder.Services
+    .AddGenericPresentation()
+    .AddDomainDependencies();
 
 builder.Services.AddHttpClient();
 
