@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BikeStores.Domain.Repositories;
 
-public class OrderRepository : IGenericOrderRepository
+public class OrderRepository : IGenericRepository<Order>
 {
     private readonly BikeStoresContext _context;
     public OrderRepository(BikeStoresContext context)
@@ -43,21 +43,6 @@ public class OrderRepository : IGenericOrderRepository
                 .Include(o => o.Staff)
                 .Include(o => o.Store)
                 .FirstOrDefault(m => m.OrderId == id);
-    }
-
-    public IEnumerable<Customer> GetCustomers()
-    {
-        return _context.Customers;
-    }
-
-    public IEnumerable<Staff> GetStaffs()
-    {
-        return _context.Staffs;
-    }
-
-    public IEnumerable<Store> GetStores()
-    {
-        return _context.Stores;
     }
 
     public void Insert(Order entity)

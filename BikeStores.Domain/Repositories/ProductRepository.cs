@@ -1,10 +1,11 @@
 ﻿using BikeStores.Domain.Data;
 using BikeStores.Domain.Models;
+using BikeStores.Presentation.Generic.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace BikeStores.Domain.Repositories;
 
-public class ProductRepository : IGenericProductRepository
+public class ProductRepository : IGenericRepository<Product>
 {
     private readonly BikeStoresContext _context;
 
@@ -35,22 +36,12 @@ public class ProductRepository : IGenericProductRepository
             .Include(p => p.Category);
     }
 
-    public IEnumerable<Brand> GetBrands()
-    {
-        return _context.Brands;
-    }
-
     public Product? GetById(int id)
     {
         return _context.Products
             .Include(p => p.Brand)
             .Include(p => p.Category)
             .FirstOrDefault(m => m.ProductId == id);
-    }
-
-    public IEnumerable<Category> GetCategories()
-    {
-        return _context.Categories;
     }
 
     public void Insert(Product entity)

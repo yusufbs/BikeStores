@@ -1,47 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using BikeStores.Domain.Models;
 using BikeStores.Domain.Repositories;
+using BikeStores.Presentation.Generic.Interfaces;
 
 namespace BikeStores.MVC.Controllers;
 
-public class ProductsController : Controller
+public class ProductsController : BaseController<Product>
 {
-    private readonly IGenericProductRepository _repository;
+    private readonly IDataRepository _dataRepository;
 
-    public ProductsController(IGenericProductRepository repository)
+    public ProductsController(IGenericRepository<Product> repository, IDataRepository dataRepository) : base(repository)
     {
-        _repository = repository;
-    }
-
-    // GET: Products
-    public IActionResult Index()
-    {
-        return View(_repository.GetAll());
-    }
-
-    // GET: Products/Details/5
-    public IActionResult Details(int? id)
-    {
-        if (id == null)
-        {
-            return NotFound();
-        }
-
-        var product = _repository.GetById(id.Value);
-        if (product == null)
-        {
-            return NotFound();
-        }
-
-        return View(product);
-    }
-
-    // GET: Products/Create
-    public IActionResult Create()
-    {
-        return GetViewWithData();
+        _dataRepository = dataRepository;
     }
 
     // POST: Products/Create
@@ -51,28 +22,7 @@ public class ProductsController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Create([Bind("ProductId,ProductName,BrandId,CategoryId,ModelYear,ListPrice")] Product product)
     {
-        if (ModelState.IsValid)
-        {
-            _repository.Insert(product);
-            return RedirectToAction(nameof(Index));
-        }
-        return GetViewWithData(product);
-    }
-
-    // GET: Products/Edit/5
-    public IActionResult Edit(int? id)
-    {
-        if (id == null)
-        {
-            return NotFound();
-        }
-
-        var product = _repository.GetById(id.Value);
-        if (product == null)
-        {
-            return NotFound();
-        }
-        return GetViewWithData(product);
+        return CreatePost(product);
     }
 
     // POST: Products/Edit/5
@@ -82,72 +32,20 @@ public class ProductsController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Edit(int id, [Bind("ProductId,ProductName,BrandId,CategoryId,ModelYear,ListPrice")] Product product)
     {
-        if (id != product.ProductId)
-        {
-            return NotFound();
-        }
-
-        if (ModelState.IsValid)
-        {
-            try
-            {
-                _repository.Update(product);
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!_repository.Exists(product.ProductId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-            return RedirectToAction(nameof(Index));
-        }
-        return GetViewWithData(product);
+        return EditPost(product, id == product.ProductId, product.ProductId);
     }
 
-    // GET: Products/Delete/5
-    public IActionResult Delete(int? id)
+    public override void PopulateViewData(Product? entity = null)
     {
-        if (id == null)
+        if (entity == null)
         {
-            return NotFound();
-        }
-
-        var product = _repository.GetById(id.Value);
-        if (product == null)
-        {
-            return NotFound();
-        }
-
-        return View(product);
-    }
-
-    // POST: Products/Delete/5
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public IActionResult DeleteConfirmed(int id)
-    {
-        _repository.Delete(id);
-        return RedirectToAction(nameof(Index));
-    }
-
-    private IActionResult GetViewWithData(Product? product = null)
-    {
-        if (product == null)
-        {
-            ViewData["BrandId"] = new SelectList(_repository.GetBrands(), "BrandId", "BrandName");
-            ViewData["CategoryId"] = new SelectList(_repository.GetCategories(), "CategoryId", "CategoryName");
-            return View();
+            ViewData["BrandId"] = new SelectList(_dataRepository.GetBrands(), "BrandId", "BrandName");
+            ViewData["CategoryId"] = new SelectList(_dataRepository.GetCategories(), "CategoryId", "CategoryName");
         }
         else
         {
-            ViewData["BrandId"] = new SelectList(_repository.GetBrands(), "BrandId", "BrandName", product.BrandId);
-            ViewData["CategoryId"] = new SelectList(_repository.GetCategories(), "CategoryId", "CategoryName", product.CategoryId);
-            return View(product);
+            ViewData["BrandId"] = new SelectList(_dataRepository.GetBrands(), "BrandId", "BrandName", entity.BrandId);
+            ViewData["CategoryId"] = new SelectList(_dataRepository.GetCategories(), "CategoryId", "CategoryName", entity.CategoryId);
         }
     }
 }

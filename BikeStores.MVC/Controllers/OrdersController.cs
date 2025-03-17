@@ -1,65 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using BikeStores.Domain.Models;
 using BikeStores.Domain.Repositories;
+using BikeStores.Presentation.Generic.Interfaces;
 
 namespace BikeStores.MVC.Controllers;
 
-public class OrdersController : Controller
+public class OrdersController : BaseController<Order>
 {
-    private readonly IGenericOrderRepository _repository;
+    private readonly IDataRepository _dataRepository;
 
-    public OrdersController(IGenericOrderRepository repository)
+    public OrdersController(IGenericRepository<Order> repository, IDataRepository dataRepository) : base(repository)
     {
-        _repository = repository;
-    }
-
-    // GET: Orders
-    public IActionResult Index()
-    {
-        return View(_repository.GetAll());
-    }
-
-    // GET: Orders/Details/5
-    public IActionResult Details(int? id)
-    {
-        if (id == null)
-        {
-            return NotFound();
-        }
-
-        var order = _repository.GetById(id.Value);
-        if (order == null)
-        {
-            return NotFound();
-        }
-
-        return View(order);
-    }
-
-    // GET: Orders/Create
-    public IActionResult Create()
-    {
-        return GetViewWithData();
-    }
-
-    private IActionResult GetViewWithData(Order? order = null)
-    {
-        if (order == null)
-        {
-            ViewData["CustomerId"] = new SelectList(_repository.GetCustomers(), "CustomerId", "Email");
-            ViewData["StaffId"] = new SelectList(_repository.GetStaffs(), "StaffId", "Email");
-            ViewData["StoreId"] = new SelectList(_repository.GetStores(), "StoreId", "StoreName");
-            return View();
-        }
-        else
-        {
-            ViewData["CustomerId"] = new SelectList(_repository.GetCustomers(), "CustomerId", "Email", order.CustomerId);
-            ViewData["StaffId"] = new SelectList(_repository.GetStaffs(), "StaffId", "Email", order.StaffId);
-            ViewData["StoreId"] = new SelectList(_repository.GetStores(), "StoreId", "StoreName", order.StoreId);
-            return View(order);
-        }
+        _dataRepository = dataRepository;
     }
 
     // POST: Orders/Create
@@ -69,28 +22,7 @@ public class OrdersController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Create([Bind("OrderId,CustomerId,OrderStatus,OrderDate,RequiredDate,ShippedDate,StoreId,StaffId")] Order order)
     {
-        if (ModelState.IsValid)
-        {
-            _repository.Insert(order);
-            return RedirectToAction(nameof(Index));
-        }
-        return GetViewWithData(order);
-    }
-
-    // GET: Orders/Edit/5
-    public IActionResult Edit(int? id)
-    {
-        if (id == null)
-        {
-            return NotFound();
-        }
-
-        var order = _repository.GetById(id.Value);
-        if (order == null)
-        {
-            return NotFound();
-        }
-        return GetViewWithData(order);
+        return CreatePost(order);
     }
 
     // POST: Orders/Edit/5
@@ -100,56 +32,22 @@ public class OrdersController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Edit(int id, [Bind("OrderId,CustomerId,OrderStatus,OrderDate,RequiredDate,ShippedDate,StoreId,StaffId")] Order order)
     {
-        if (id != order.OrderId)
-        {
-            return NotFound();
-        }
-
-        if (ModelState.IsValid)
-        {
-            try
-            {
-                _repository.Update(order);
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!_repository.Exists(order.OrderId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-            return RedirectToAction(nameof(Index));
-        }
-        return GetViewWithData(order);
+        return EditPost(order, id == order.OrderId, order.OrderId);
     }
 
-    // GET: Orders/Delete/5
-    public IActionResult Delete(int? id)
+    public override void PopulateViewData(Order? entity = null)
     {
-        if (id == null)
+        if (entity == null)
         {
-            return NotFound();
+            ViewData["CustomerId"] = new SelectList(_dataRepository.GetCustomers(), "CustomerId", "Email");
+            ViewData["StaffId"] = new SelectList(_dataRepository.GetStaffs(), "StaffId", "Email");
+            ViewData["StoreId"] = new SelectList(_dataRepository.GetStores(), "StoreId", "StoreName");
         }
-
-        var order = _repository.GetById(id.Value);
-        if (order == null)
+        else
         {
-            return NotFound();
+            ViewData["CustomerId"] = new SelectList(_dataRepository.GetCustomers(), "CustomerId", "Email", entity.CustomerId);
+            ViewData["StaffId"] = new SelectList(_dataRepository.GetStaffs(), "StaffId", "Email", entity.StaffId);
+            ViewData["StoreId"] = new SelectList(_dataRepository.GetStores(), "StoreId", "StoreName", entity.StoreId);
         }
-
-        return View(order);
-    }
-
-    // POST: Orders/Delete/5
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    public IActionResult DeleteConfirmed(int id)
-    {
-        _repository.Delete(id);
-        return RedirectToAction(nameof(Index));
     }
 }
