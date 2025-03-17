@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace BikeStores.Domain.Models;
+﻿namespace BikeStores.Domain.Models;
 
 public partial class Staff
 {

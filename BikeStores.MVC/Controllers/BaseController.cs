@@ -1,5 +1,4 @@
-﻿using BikeStores.Domain.Models;
-using BikeStores.Presentation.Generic.Interfaces;
+﻿using BikeStores.Presentation.Generic.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
