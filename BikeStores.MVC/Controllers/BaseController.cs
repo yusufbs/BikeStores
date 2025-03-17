@@ -7,6 +7,8 @@ namespace BikeStores.MVC.Controllers;
 public class BaseController<T> : Controller where T : class
 {
     protected readonly IGenericRepository<T> _repository;
+
+    //protected delegate void PopulateViewData(T? item = null);
     public BaseController(IGenericRepository<T> repository)
     {
         _repository = repository;
@@ -38,6 +40,7 @@ public class BaseController<T> : Controller where T : class
     // GET: {Entities}/Create
     public IActionResult Create()
     {
+        PopulateViewData();
         return View();
     }
 
@@ -49,6 +52,7 @@ public class BaseController<T> : Controller where T : class
             _repository.Insert(entity);
             return RedirectToAction(nameof(Index));
         }
+        PopulateViewData(entity);
         return View(entity);
     }
 
@@ -65,6 +69,7 @@ public class BaseController<T> : Controller where T : class
         {
             return NotFound();
         }
+        PopulateViewData(entity);
         return View(entity);
     }
 
@@ -95,6 +100,7 @@ public class BaseController<T> : Controller where T : class
             }
             return RedirectToAction(nameof(Index));
         }
+        PopulateViewData(entity);
         return View(entity);
     }
 
@@ -111,7 +117,7 @@ public class BaseController<T> : Controller where T : class
         {
             return NotFound();
         }
-
+        PopulateViewData(entity);
         return View(entity);
     }
 
@@ -122,5 +128,10 @@ public class BaseController<T> : Controller where T : class
     {
         _repository.Delete(id);
         return RedirectToAction(nameof(Index));
+    }
+
+    public virtual void PopulateViewData(T? entity = null)
+    {
+        // this remains empty in BaseController, DO NOT DELETE THIS
     }
 }

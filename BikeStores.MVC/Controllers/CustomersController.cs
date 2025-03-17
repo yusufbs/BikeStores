@@ -7,9 +7,7 @@ namespace BikeStores.MVC.Controllers
 {
     public class CustomersController : BaseController<Customer>
     {
-        public CustomersController(IGenericRepository<Customer> repository) : base(repository)
-        {
-        }
+        public CustomersController(IGenericRepository<Customer> repository) : base(repository) {}
 
         // POST: Customers/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
