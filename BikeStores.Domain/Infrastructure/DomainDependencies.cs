@@ -32,6 +32,8 @@ public static class DomainDependencies
         services.AddScoped<IGenericRepository<Order>, OrderRepository>();
         services.AddScoped<IGenericRepository<OrderItem>, OrderItemRepository>();
         services.AddScoped<IGenericRepository<Product>, ProductRepository>();
+        services.AddScoped<IGenericRepository<Staff>, StaffRepository>();
+        services.AddScoped<IGenericRepository<Stock>, StockRepository>();
         services.AddScoped<IDataRepository, DataRepository>();
         return services;
     }

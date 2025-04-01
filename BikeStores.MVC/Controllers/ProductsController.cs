@@ -48,4 +48,10 @@ public class ProductsController : BaseController<Product>
             ViewData["CategoryId"] = new SelectList(_dataRepository.GetCategories(), "CategoryId", "CategoryName", entity.CategoryId);
         }
     }
+
+    public override void PopulateNavigationalProperties(Product entity)
+    {
+        entity.Brand = _dataRepository.GetBrands().FirstOrDefault(x => x.BrandId == entity.BrandId)!;
+        entity.Category = _dataRepository.GetCategories().FirstOrDefault(x => x.CategoryId == entity.CategoryId)!;
+    }
 }

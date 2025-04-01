@@ -14,7 +14,7 @@ internal class OrderConfiguration : IEntityTypeConfiguration<Order>
 
         builder.Property(e => e.OrderId).HasColumnName("order_id");
         builder.Property(e => e.CustomerId).HasColumnName("customer_id");
-        builder .Property(e => e.OrderDate).HasColumnName("order_date");
+        builder.Property(e => e.OrderDate).HasColumnName("order_date");
         builder.Property(e => e.OrderStatus).HasColumnName("order_status");
         builder.Property(e => e.RequiredDate).HasColumnName("required_date");
         builder.Property(e => e.ShippedDate).HasColumnName("shipped_date");
