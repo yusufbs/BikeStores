@@ -1,7 +1,17 @@
+using BikeStores.Domain.Infrastructure;
+using BikeStores.Presentation.Generic.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//custom
+builder.Services
+    .AddGenericPresentation()
+    .AddDomainDependencies();
+
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
@@ -22,7 +32,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+    pattern: "{controller=Brands}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 
