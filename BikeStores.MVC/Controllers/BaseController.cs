@@ -1,16 +1,22 @@
-﻿using BikeStores.Presentation.Generic.Interfaces;
+﻿using BikeStores.Domain.Validators;
+using BikeStores.Presentation.Generic.Interfaces;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace BikeStores.MVC.Controllers;
 
 public class BaseController<T> : Controller where T : class
 {
     protected readonly IGenericRepository<T> _repository;
+    protected readonly IValidator<T>? _validator;
 
-    public BaseController(IGenericRepository<T> repository)
+    public BaseController(IGenericRepository<T> repository, IValidator<T>? validator = null)
     {
         _repository = repository;
+        _validator = validator;
     }
 
     // GET: {Entities}
@@ -46,13 +52,24 @@ public class BaseController<T> : Controller where T : class
     // POST: {Entities}/Create
     public IActionResult CreatePost(T entity)
     {
-        if (ModelState.IsValid)
+        // only this contains fluent validation code
+        // utilized in CustomersController
+        ValidationResult? result = null;
+        if (_validator is not null)
+        {
+            result = _validator.Validate(entity);
+        }
+        if (result?.IsValid ?? true)
         {
             _repository.Insert(entity);
             return RedirectToAction(nameof(Index));
         }
-        PopulateViewData(entity);
-        return View(entity);
+        else
+        {
+            result?.AddToModelState(ModelState);
+            PopulateViewData(entity);
+            return View(entity);
+        }
     }
 
     // GET: {Entities}/Edit/5

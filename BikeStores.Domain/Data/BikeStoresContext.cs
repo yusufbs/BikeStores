@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using BikeStores.Domain.Configurations;
+﻿using BikeStores.Domain.Configurations;
 using BikeStores.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 

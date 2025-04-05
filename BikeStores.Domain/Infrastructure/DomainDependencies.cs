@@ -34,13 +34,14 @@ public static class DomainDependencies
         services.AddScoped<IGenericRepository<Product>, ProductRepository>();
         services.AddScoped<IGenericRepository<Staff>, StaffRepository>();
         services.AddScoped<IGenericRepository<Stock>, StockRepository>();
+        services.AddScoped<IGenericRepository<Store>, StoreRepository>();
         services.AddScoped<IDataRepository, DataRepository>();
         return services;
     }
 
     public static IServiceCollection AddDomainValidators(this IServiceCollection services)
     {
-        services.AddScoped<AbstractValidator<Customer>, CustomerValidator>();
+        services.AddScoped<IValidator<Customer>, CustomerValidator>();
         return services;
     }
 }
