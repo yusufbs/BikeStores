@@ -8,7 +8,6 @@ public class BaseController<T> : Controller where T : class
 {
     protected readonly IGenericRepository<T> _repository;
 
-    //protected delegate void PopulateViewData(T? item = null);
     public BaseController(IGenericRepository<T> repository)
     {
         _repository = repository;
@@ -47,8 +46,6 @@ public class BaseController<T> : Controller where T : class
     // POST: {Entities}/Create
     public IActionResult CreatePost(T entity)
     {
-        PopulateNavigationalProperties(entity);
-        ResetValidation(entity);
         if (ModelState.IsValid)
         {
             _repository.Insert(entity);
@@ -83,8 +80,6 @@ public class BaseController<T> : Controller where T : class
             return NotFound();
         }
 
-        PopulateNavigationalProperties(entity);
-        ResetValidation(entity);
         if (ModelState.IsValid)
         {
             try
@@ -138,16 +133,4 @@ public class BaseController<T> : Controller where T : class
     {
         // this remains empty in BaseController, DO NOT DELETE THIS
     }
-
-    public virtual void PopulateNavigationalProperties(T entity)
-    {
-        // this remains empty in BaseController, DO NOT DELETE THIS
-    }
-
-    private void ResetValidation(T entity)
-    {
-        ModelState.Clear();
-        TryValidateModel(entity);
-    }
-
 }

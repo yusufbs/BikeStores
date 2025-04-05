@@ -37,12 +37,9 @@
                 @Html.DisplayFor(modelItem => item.Store.StoreName)
             </td>
             <td>
-                @* @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) *@
-                    <a asp-action="Edit" asp-route-id="@item.StoreId" asp-route-id2="@item.ProductId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.StoreId" asp-route-id2="@item.ProductId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.StoreId" asp-route-id2="@item.ProductId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.StoreId" asp-route-id2="@item.ProductId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.StoreId" asp-route-id2="@item.ProductId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StoreId" asp-route-id2="@item.ProductId">Delete</a>
             </td>
         </tr>
 }

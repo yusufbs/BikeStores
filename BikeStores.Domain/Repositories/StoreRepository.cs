@@ -1,6 +1,7 @@
 ﻿using BikeStores.Domain.Data;
 using BikeStores.Domain.Models;
 using BikeStores.Presentation.Generic.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace BikeStores.Domain.Repositories;
 
@@ -14,12 +15,17 @@ public class StoreRepository : IGenericRepository<Store>
     }
     public void Delete(int id)
     {
-        throw new NotImplementedException();
+        var store = GetById(id);
+        if (store != null)
+        {
+            _context.Stores.Remove(store);
+        }
+        Save();
     }
 
     public bool Exists(int id)
     {
-        throw new NotImplementedException();
+        return _context.Stores.Any(e => e.StoreId == id);
     }
 
     public IEnumerable<Store> GetAll()
@@ -29,21 +35,24 @@ public class StoreRepository : IGenericRepository<Store>
 
     public Store? GetById(int id)
     {
-        throw new NotImplementedException();
+        return _context.Stores
+            .FirstOrDefault(m => m.StoreId == id);
     }
 
     public void Insert(Store entity)
     {
-        throw new NotImplementedException();
+        _context.Stores.Add(entity);
+        Save();
     }
 
     public void Save()
     {
-        throw new NotImplementedException();
+        _context.SaveChanges();
     }
 
     public void Update(Store entity)
     {
-        throw new NotImplementedException();
+        _context.Update(entity);
+        Save();
     }
 }

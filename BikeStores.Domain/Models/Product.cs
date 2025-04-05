@@ -1,4 +1,6 @@
-﻿namespace BikeStores.Domain.Models;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
+namespace BikeStores.Domain.Models;
 
 public partial class Product
 {
@@ -13,9 +15,11 @@ public partial class Product
     public short ModelYear { get; set; }
 
     public decimal ListPrice { get; set; }
-
+    
+    [ValidateNever]
     public virtual Brand Brand { get; set; } = null!;
-
+    
+    [ValidateNever]
     public virtual Category Category { get; set; } = null!;
 
     public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();

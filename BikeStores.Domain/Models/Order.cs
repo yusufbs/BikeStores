@@ -1,4 +1,6 @@
-﻿namespace BikeStores.Domain.Models;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
+namespace BikeStores.Domain.Models;
 
 public partial class Order
 {
@@ -21,8 +23,10 @@ public partial class Order
     public virtual Customer? Customer { get; set; }
 
     public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
-
+    
+    [ValidateNever]
     public virtual Staff Staff { get; set; } = null!;
-
+    
+    [ValidateNever]
     public virtual Store Store { get; set; } = null!;
 }

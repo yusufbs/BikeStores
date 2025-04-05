@@ -1,4 +1,6 @@
-﻿namespace BikeStores.Domain.Models;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
+namespace BikeStores.Domain.Models;
 
 public partial class Stock
 {
@@ -8,7 +10,9 @@ public partial class Stock
 
     public int? Quantity { get; set; }
 
+    [ValidateNever]
     public virtual Product Product { get; set; } = null!;
 
+    [ValidateNever]
     public virtual Store Store { get; set; } = null!;
 }
