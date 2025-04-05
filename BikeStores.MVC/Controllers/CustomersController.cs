@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using BikeStores.Domain.Models;
 using BikeStores.Presentation.Generic.Interfaces;
+using FluentValidation;
 
 namespace BikeStores.MVC.Controllers
 {
     public class CustomersController : BaseController<Customer>
     {
-        public CustomersController(IGenericRepository<Customer> repository) : base(repository) {}
+        public CustomersController(IGenericRepository<Customer> repository, IValidator<Customer> validator) 
+            : base(repository, validator) { }
 
         // POST: Customers/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
