@@ -1,0 +1,6 @@
+@BikeStores.WebApi_HostAddress = http://localhost:5101
+
+GET {{BikeStores.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

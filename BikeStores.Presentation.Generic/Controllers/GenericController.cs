@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BikeStores.Presentation.Generic.Controllers;
 
-public class GenericController<T> : Controller, IGenericController<T> where T : class
+public class GenericController<T> : ControllerBase, IGenericController<T> where T : class
 {
     private readonly IGenericRepository<T> _repository;
 
