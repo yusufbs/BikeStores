@@ -1,0 +1,6 @@
+@BikeStores.WebApi.Swagger_HostAddress = http://localhost:5054
+
+GET {{BikeStores.WebApi.Swagger_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

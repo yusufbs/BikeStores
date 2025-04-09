@@ -1,0 +1,6 @@
+@BikeStores.WebApi.NSwag_HostAddress = http://localhost:5182
+
+GET {{BikeStores.WebApi.NSwag_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

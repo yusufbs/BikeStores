@@ -8,11 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
+    <PackageReference Include="NSwag.AspNetCore" Version="14.3.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BikeStores.Presentation.Generic\BikeStores.Presentation.Generic.csproj" />
     <ProjectReference Include="..\BikeStores.WebApi.Controllers\BikeStores.WebApi.Controllers.csproj" />
   </ItemGroup>
 
