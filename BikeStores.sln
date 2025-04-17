@@ -9,6 +9,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.Domain", "BikeSt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.Presentation.Generic", "BikeStores.Presentation.Generic\BikeStores.Presentation.Generic.csproj", "{7279674F-F33E-44A8-ACE6-BBDB97B1EF44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.WebApi", "BikeStores.WebApi\BikeStores.WebApi.csproj", "{3626171B-F238-4084-A535-CD7D606C2D06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.WebApi.Controllers", "BikeStores.WebApi.Controllers\BikeStores.WebApi.Controllers.csproj", "{08C91A46-2986-4EB3-8595-7FACB59E85B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.WebApi.Swagger", "BikeStores.WebApi.Swagger\BikeStores.WebApi.Swagger.csproj", "{AC69E6B4-489D-44D1-9D73-F87FC55962B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.WebApi.ReDoc", "BikeStores.WebApi.ReDoc\BikeStores.WebApi.ReDoc.csproj", "{9B0D5EDE-DE6B-49E1-904E-616B676092FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.WebApi.NSwag", "BikeStores.WebApi.NSwag\BikeStores.WebApi.NSwag.csproj", "{F9540BC1-C077-48FE-AB3F-0E588B6691E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.WebApi.Scalar", "BikeStores.WebApi.Scalar\BikeStores.WebApi.Scalar.csproj", "{93A6EAFE-1F4B-4744-8425-FFF21952198F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +39,30 @@ Global
 		{7279674F-F33E-44A8-ACE6-BBDB97B1EF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7279674F-F33E-44A8-ACE6-BBDB97B1EF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7279674F-F33E-44A8-ACE6-BBDB97B1EF44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3626171B-F238-4084-A535-CD7D606C2D06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3626171B-F238-4084-A535-CD7D606C2D06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3626171B-F238-4084-A535-CD7D606C2D06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3626171B-F238-4084-A535-CD7D606C2D06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08C91A46-2986-4EB3-8595-7FACB59E85B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08C91A46-2986-4EB3-8595-7FACB59E85B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08C91A46-2986-4EB3-8595-7FACB59E85B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08C91A46-2986-4EB3-8595-7FACB59E85B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC69E6B4-489D-44D1-9D73-F87FC55962B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC69E6B4-489D-44D1-9D73-F87FC55962B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC69E6B4-489D-44D1-9D73-F87FC55962B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC69E6B4-489D-44D1-9D73-F87FC55962B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0D5EDE-DE6B-49E1-904E-616B676092FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0D5EDE-DE6B-49E1-904E-616B676092FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0D5EDE-DE6B-49E1-904E-616B676092FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0D5EDE-DE6B-49E1-904E-616B676092FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9540BC1-C077-48FE-AB3F-0E588B6691E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9540BC1-C077-48FE-AB3F-0E588B6691E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9540BC1-C077-48FE-AB3F-0E588B6691E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9540BC1-C077-48FE-AB3F-0E588B6691E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93A6EAFE-1F4B-4744-8425-FFF21952198F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93A6EAFE-1F4B-4744-8425-FFF21952198F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93A6EAFE-1F4B-4744-8425-FFF21952198F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93A6EAFE-1F4B-4744-8425-FFF21952198F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
