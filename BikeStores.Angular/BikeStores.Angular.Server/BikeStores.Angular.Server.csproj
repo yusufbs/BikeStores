@@ -14,12 +14,19 @@
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy">
       <Version>9.*-*</Version>
     </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\BikeStores.Presentation.Generic\BikeStores.Presentation.Generic.csproj" />
+    <ProjectReference Include="..\..\BikeStores.WebApi.Controllers\BikeStores.WebApi.Controllers.csproj" />
     <ProjectReference Include="..\bikestores.angular.client\bikestores.angular.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
