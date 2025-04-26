@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrandsComponent } from './brands.component';
 import { BrandsFormComponent } from './brands-form/brands-form.component';
-import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
-
+import { BrandsRoutingModule } from './brands-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -12,12 +11,11 @@ import { CommonModule } from '@angular/common';
     BrandsFormComponent
   ],
   exports: [
-    BrandsComponent,
-    BrandsFormComponent
+    BrandsRoutingModule
   ],
   imports: [
-    RouterModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class BrandsModule { }
