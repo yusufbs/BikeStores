@@ -8,10 +8,11 @@ import { ProductsComponent } from './products/products.component';
 import { CustomersComponent } from './customers/customers.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { StoresComponent } from './stores/stores.component';
-import { BrandsComponent } from './brands/brands.component';
 import { OrdersComponent } from './orders/orders.component';
 import { StaffsComponent } from './staffs/staffs.component';
 import { StocksComponent } from './stocks/stocks.component';
+import { RouterModule } from '@angular/router';
+import { BrandsComponent } from './brands/brands.component';
 
 @NgModule({
   declarations: [
@@ -20,15 +21,17 @@ import { StocksComponent } from './stocks/stocks.component';
     CustomersComponent,
     CategoriesComponent,
     StoresComponent,
-    BrandsComponent,
     OrdersComponent,
     StaffsComponent,
-    StocksComponent
+    StocksComponent,
+    BrandsComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })
