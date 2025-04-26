@@ -12,8 +12,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { StaffsComponent } from './staffs/staffs.component';
 import { StocksComponent } from './stocks/stocks.component';
 import { RouterModule } from '@angular/router';
-import { BrandsComponent } from './brands/brands.component';
-import { BrandsFormComponent } from './brands/brands-form/brands-form.component';
+import { BrandsModule } from './brands/brands.module';
 
 @NgModule({
   declarations: [
@@ -25,13 +24,12 @@ import { BrandsFormComponent } from './brands/brands-form/brands-form.component'
     OrdersComponent,
     StaffsComponent,
     StocksComponent,
-    BrandsComponent,
-    BrandsFormComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    BrandsModule
   ],
   exports: [],
   providers: [],
