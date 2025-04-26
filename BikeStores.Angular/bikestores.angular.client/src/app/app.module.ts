@@ -13,6 +13,7 @@ import { StaffsComponent } from './staffs/staffs.component';
 import { StocksComponent } from './stocks/stocks.component';
 import { RouterModule } from '@angular/router';
 import { BrandsComponent } from './brands/brands.component';
+import { BrandsFormComponent } from './brands/brands-form/brands-form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BrandsComponent } from './brands/brands.component';
     OrdersComponent,
     StaffsComponent,
     StocksComponent,
-    BrandsComponent
+    BrandsComponent,
+    BrandsFormComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
