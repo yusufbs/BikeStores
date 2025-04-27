@@ -13,6 +13,7 @@ import { StaffsComponent } from './staffs/staffs.component';
 import { StocksComponent } from './stocks/stocks.component';
 import { RouterModule } from '@angular/router';
 import { BrandsModule } from './brands/brands.module';
+import { ShowAllRoutesComponent } from './show-all-routes/show-all-routes.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { BrandsModule } from './brands/brands.module';
     OrdersComponent,
     StaffsComponent,
     StocksComponent,
+    ShowAllRoutesComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule,
