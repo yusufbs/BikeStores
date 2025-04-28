@@ -21,7 +21,9 @@ export class BrandsComponent implements OnInit {
   }
 
   deleteItem(brandId: number) {
-
+    this.brandsService.deleteBrand(brandId).subscribe(() => {
+      this.brands = this.brands.filter(brand => brand.brandId !== brandId);
+    });
   }
 
 }

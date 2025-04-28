@@ -15,4 +15,16 @@ export class BrandsService {
   getBrands(): Observable<Brand[]> {
     return this.http.get<Brand[]>(this.apiUrl);
   }
+
+  createBrand(item: Brand): Observable<Brand> {
+    return this.http.post<Brand>(this.apiUrl, item);
+  }
+
+  updateBrand(item: Brand): Observable<Brand> {
+    return this.http.put<Brand>(`${this.apiUrl}/${item.brandId}`, item);
+  }
+
+  deleteBrand(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
 }
