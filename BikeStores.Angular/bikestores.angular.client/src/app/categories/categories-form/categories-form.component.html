@@ -1,0 +1,6 @@
+<h2>{{ isEdit ? 'Edit Item' : 'Create Item' }}</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input formControlName="categoryName" placeholder="Category Name">
+  <button type="submit">Save</button>
+  <button type="button" routerLink="/categories">Cancel</button>
+</form>

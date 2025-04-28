@@ -1,0 +1,13 @@
+<h2>Brands</h2>
+<button routerLink="/brands/create">Add New Brand</button>
+
+<table>
+  <tr *ngFor="let brand of brands">
+    <td>{{ brand.brandId }}</td>
+    <td>{{ brand.brandName }}</td>
+    <td>
+      <button [routerLink]="['/brands/edit', brand.brandId]">Edit</button>
+      <button (click)="deleteItem(brand.brandId!)">Delete</button>
+    </td>
+  </tr>
+</table>

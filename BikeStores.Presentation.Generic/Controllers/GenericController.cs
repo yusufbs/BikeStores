@@ -24,7 +24,7 @@ public class GenericController<T> : ControllerBase, IGenericController<T> where 
         return _repository.GetById(id);
     }
 
-    [HttpPost("{id}")]
+    [HttpPost()]
     public void Create(T entity)
     {
         _repository.Insert(entity);
