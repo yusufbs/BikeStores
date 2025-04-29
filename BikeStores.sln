@@ -25,6 +25,10 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "bikestores.angular.client",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.Angular.Server", "BikeStores.Angular\BikeStores.Angular.Server\BikeStores.Angular.Server.csproj", "{B9385165-3192-43AE-BBCF-CBD9B3B8B599}"
 EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "bikestores.react.client", "BikeStores.React\bikestores.react.client\bikestores.react.client.esproj", "{55CF7E5E-EEB8-311D-223B-77B4FDB4B70F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.React.Server", "BikeStores.React\BikeStores.React.Server\BikeStores.React.Server.csproj", "{EDB8D5A8-3249-4663-8934-9FDD49CA1218}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +81,16 @@ Global
 		{B9385165-3192-43AE-BBCF-CBD9B3B8B599}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9385165-3192-43AE-BBCF-CBD9B3B8B599}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9385165-3192-43AE-BBCF-CBD9B3B8B599}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55CF7E5E-EEB8-311D-223B-77B4FDB4B70F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55CF7E5E-EEB8-311D-223B-77B4FDB4B70F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55CF7E5E-EEB8-311D-223B-77B4FDB4B70F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{55CF7E5E-EEB8-311D-223B-77B4FDB4B70F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55CF7E5E-EEB8-311D-223B-77B4FDB4B70F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55CF7E5E-EEB8-311D-223B-77B4FDB4B70F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EDB8D5A8-3249-4663-8934-9FDD49CA1218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDB8D5A8-3249-4663-8934-9FDD49CA1218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDB8D5A8-3249-4663-8934-9FDD49CA1218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDB8D5A8-3249-4663-8934-9FDD49CA1218}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
