@@ -29,6 +29,8 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "bikestores.react.client", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.React.Server", "BikeStores.React\BikeStores.React.Server\BikeStores.React.Server.csproj", "{EDB8D5A8-3249-4663-8934-9FDD49CA1218}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LP-Authentication", "LearningPartner\LP-Authentication\LP-Authentication.csproj", "{D9D2B0CA-5EC9-4A01-9C93-DE1217122EE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{EDB8D5A8-3249-4663-8934-9FDD49CA1218}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDB8D5A8-3249-4663-8934-9FDD49CA1218}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDB8D5A8-3249-4663-8934-9FDD49CA1218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9D2B0CA-5EC9-4A01-9C93-DE1217122EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9D2B0CA-5EC9-4A01-9C93-DE1217122EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9D2B0CA-5EC9-4A01-9C93-DE1217122EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9D2B0CA-5EC9-4A01-9C93-DE1217122EE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
