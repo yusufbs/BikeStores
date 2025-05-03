@@ -1,0 +1,6 @@
+@LP_Authentication_HostAddress = http://localhost:5206
+
+GET {{LP_Authentication_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
