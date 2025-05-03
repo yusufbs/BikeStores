@@ -1,4 +1,4 @@
-﻿namespace Lp.AngularBlog_Domain.Entities;
+﻿namespace Lp.AngularBlog.Domain.Entities;
 
 public class Blog
 {
@@ -6,7 +6,7 @@ public class Blog
     public required string  Title { get; set; }
     public required string Content { get; set; }
     public required string Image { get; set; }
-    public required DateTime CreateAt { get; set; } = DateTime.Now;
+    public required DateTime CreatedAt { get; set; } = DateTime.Now;
     public required DateTime UpdatedAt { get; set; } = DateTime.Now;
 
     public int UserId { get; set; }

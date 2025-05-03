@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <RootNamespace>Lp.AngularBlog_Application</RootNamespace>
+    <RootNamespace>Lp.AngularBlog.Application</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -16,6 +16,10 @@
     <Folder Include="Models\" />
     <Folder Include="Validators\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lp.AngularBlog,Domain\Lp.AngularBlog.Domain.csproj" />
   </ItemGroup>
 
 </Project>

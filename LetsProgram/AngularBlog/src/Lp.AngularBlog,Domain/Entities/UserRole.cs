@@ -1,4 +1,4 @@
-﻿namespace Lp.AngularBlog_Domain.Entities;
+﻿namespace Lp.AngularBlog.Domain.Entities;
 
 public class UserRole
 {
