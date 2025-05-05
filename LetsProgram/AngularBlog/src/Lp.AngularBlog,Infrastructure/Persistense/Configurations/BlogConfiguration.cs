@@ -13,8 +13,8 @@ public class BlogConfiguration : IEntityTypeConfiguration<Blog>
         builder.Property(x => x.Title).IsRequired().HasMaxLength(250);
         builder.Property(x => x.Content).IsRequired();
         builder.Property(x => x.Image).IsRequired();
-        builder.Property(x => x.CreatedAt).IsRequired().HasDefaultValue(DateTime.Now);
-        builder.Property(x => x.UpdatedAt).IsRequired().HasDefaultValue(DateTime.Now);
+        builder.Property(x => x.CreatedAt).IsRequired();
+        builder.Property(x => x.UpdatedAt).IsRequired();
         builder.HasOne(x => x.User).WithMany(x => x.Blogs).HasForeignKey(x => x.UserId).OnDelete(DeleteBehavior.NoAction);
     }
 }
