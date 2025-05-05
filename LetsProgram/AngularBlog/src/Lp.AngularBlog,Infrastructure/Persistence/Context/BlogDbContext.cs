@@ -1,7 +1,7 @@
 ﻿using Lp.AngularBlog.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Lp.AngularBlog.Infrastructure.Persistense.Context;
+namespace Lp.AngularBlog.Infrastructure.Persistence.Context;
 
 public class BlogDbContext : DbContext
 {

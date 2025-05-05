@@ -17,4 +17,8 @@
     <Folder Include="Middleware\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Lp.AngularBlog,Infrastructure\Lp.AngularBlog.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

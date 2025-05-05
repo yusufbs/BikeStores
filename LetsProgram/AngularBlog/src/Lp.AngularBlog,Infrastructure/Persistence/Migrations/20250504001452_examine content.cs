@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Lp.AngularBlog.Infrastructure.Persistense.Migrations
+namespace Lp.AngularBlog.Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class examinecontent : Migration

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace Lp.AngularBlog.Infrastructure.Persistense.Context;
+namespace Lp.AngularBlog.Infrastructure.Persistence.Context;
 
 public class BlogDbContextFactory : IDesignTimeDbContextFactory<BlogDbContext>
 {

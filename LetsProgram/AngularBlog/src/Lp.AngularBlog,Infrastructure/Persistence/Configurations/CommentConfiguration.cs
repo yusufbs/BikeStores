@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Lp.AngularBlog.Infrastructure.Persistense.Configurations;
+namespace Lp.AngularBlog.Infrastructure.Persistence.Configurations;
 
 public class CommentConfiguration : IEntityTypeConfiguration<Comment>
 {

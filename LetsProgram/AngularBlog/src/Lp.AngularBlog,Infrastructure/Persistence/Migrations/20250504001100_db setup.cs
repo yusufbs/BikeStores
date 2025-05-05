@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace Lp.AngularBlog.Infrastructure.Persistense.Migrations
+namespace Lp.AngularBlog.Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class dbsetup : Migration
