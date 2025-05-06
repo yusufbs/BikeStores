@@ -8,8 +8,8 @@ public class Comment
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
     public int UserId { get; set; }
-    public required User User { get; set; }
+    public User? User { get; set; }
 
     public int BlogId { get; set; }
-    public required Blog Blog { get; set; }
+    public Blog? Blog { get; set; }
 }
