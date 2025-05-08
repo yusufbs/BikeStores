@@ -1,0 +1,6 @@
+@Lp.AngularBlog_Api_HostAddress = http://localhost:5296
+
+GET {{Lp.AngularBlog_Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
