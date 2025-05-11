@@ -1,5 +1,4 @@
-﻿using Lp.AngularBlog.Application;
-using Lp.AngularBlog.Application.Common.Results;
+﻿using Lp.AngularBlog.Application.Common.Results;
 
 namespace Lp.AngularBlog.Api.Extensions;
 

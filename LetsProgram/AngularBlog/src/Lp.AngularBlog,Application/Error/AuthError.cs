@@ -18,4 +18,10 @@ public static class AuthError
 
     public static Common.Results.Error InvalidPassword
         => new(ErrorTypeConstant.ValidationError, "Password is incorrect");
+
+    public static Common.Results.Error CreateInvalidLoginRequestError(IEnumerable<string> errors) 
+        => new(ErrorTypeConstant.ValidationError, string.Join(", ", errors));
+
+    public static Common.Results.Error CreateInvalidRegisterRequestError(IEnumerable<string> errors)
+        => new(ErrorTypeConstant.ValidationError, string.Join(", ", errors));
 }

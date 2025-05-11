@@ -1,17 +1,27 @@
-﻿using Lp.AngularBlog.Application.Common.Results;
+﻿using FluentValidation;
+using Lp.AngularBlog.Application.Common.Results;
 using Lp.AngularBlog.Application.Error;
 using Lp.AngularBlog.Application.Interfaces;
 using Lp.AngularBlog.Application.Models;
+using Lp.AngularBlog.Application.Validators;
 using Lp.AngularBlog.Domain.Entities;
 using Lp.AngularBlog.Domain.Interfaces;
 
 namespace Lp.AngularBlog.Application.Services;
 
-public class AuthenticationService(IUnitOfWork unitOfWork, IUserRepository userRepository) : IAuthenticationService
+public class AuthenticationService(
+    IUnitOfWork unitOfWork, 
+    IUserRepository userRepository, 
+    LoginRequestValidator loginValidator, 
+    RegisterRequestValidator registerValidator) : IAuthenticationService
 {
     public async Task<Result> LoginAsync(LoginRequest request)
     {
-        if (request == null) return Result.Failure(AuthError.InvalidLoginRequest);
+        var validationResult = await loginValidator.ValidateAsync(request);
+        if (!validationResult.IsValid) {
+            var errors = validationResult.Errors.Select(e => e.ErrorMessage);
+            return Result.Failure(AuthError.CreateInvalidLoginRequestError(errors));
+        }
 
         var (email, password) = (request);
         var user = await userRepository.GetUserByEmailAsync(email);
@@ -35,7 +45,12 @@ public class AuthenticationService(IUnitOfWork unitOfWork, IUserRepository userR
 
     public async Task<Result> RegisterAsync(RegisterRequest request)
     {
-        if (request == null) return Result.Failure(AuthError.InvalidRegisterRequest);
+        var validationResult = await registerValidator.ValidateAsync(request);
+        if (!validationResult.IsValid)
+        {
+            var errors = validationResult.Errors.Select(e => e.ErrorMessage);
+            return Result.Failure(AuthError.CreateInvalidRegisterRequestError(errors));
+        }
 
         var userExists = await userRepository.GetUserByEmailAsync(request.Email);
         if (userExists != null) 
