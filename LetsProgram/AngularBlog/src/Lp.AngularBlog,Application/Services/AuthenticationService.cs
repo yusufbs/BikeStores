@@ -33,7 +33,7 @@ public class AuthenticationService(
         if (user.Password != password) {
             return Result.Failure(AuthError.InvalidPassword);
         }
-        var token = await jwtService.GenerateTokenAsync(email);
+        var token = await jwtService.GenerateTokenAsync(user);
 
         var result = new
         {
