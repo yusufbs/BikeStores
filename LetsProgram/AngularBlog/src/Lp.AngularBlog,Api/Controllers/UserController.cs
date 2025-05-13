@@ -1,5 +1,14 @@
-﻿namespace Lp.AngularBlog.Api.Controllers;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Lp.AngularBlog.Api.Controllers;
 
 public class UserController : BaseApiController
 {
+    [Authorize]
+    [HttpGet]
+    public string[] GetUsers()
+    {
+        return new[] { "User 1", "User 2", "User 3", "User 4", "User 5" };
+    }
 }

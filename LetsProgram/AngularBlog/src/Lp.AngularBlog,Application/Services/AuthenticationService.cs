@@ -13,7 +13,8 @@ public class AuthenticationService(
     IUnitOfWork unitOfWork, 
     IUserRepository userRepository, 
     LoginRequestValidator loginValidator, 
-    RegisterRequestValidator registerValidator) : IAuthenticationService
+    RegisterRequestValidator registerValidator,
+    IJwtService jwtService) : IAuthenticationService
 {
     public async Task<Result> LoginAsync(LoginRequest request)
     {
@@ -32,7 +33,7 @@ public class AuthenticationService(
         if (user.Password != password) {
             return Result.Failure(AuthError.InvalidPassword);
         }
-        var token = "token"; // will be replace later
+        var token = await jwtService.GenerateTokenAsync(email);
 
         var result = new
         {
