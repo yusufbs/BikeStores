@@ -6,6 +6,7 @@ using Lp.AngularBlog.Application.Models;
 using Lp.AngularBlog.Application.Validators;
 using Lp.AngularBlog.Domain.Entities;
 using Lp.AngularBlog.Domain.Interfaces;
+using Microsoft.AspNetCore.Identity;
 
 namespace Lp.AngularBlog.Application.Services;
 
@@ -30,9 +31,14 @@ public class AuthenticationService(
         {
             return Result.Failure(AuthError.UserNotFound);
         }
-        if (user.Password != password) {
+
+        var passwordHasher = new PasswordHasher<User>();
+        var verifyResult = passwordHasher.VerifyHashedPassword(user, user.Password, password);
+        if (verifyResult == PasswordVerificationResult.Failed)
+        {
             return Result.Failure(AuthError.InvalidPassword);
         }
+
         var token = await jwtService.GenerateTokenAsync(user);
 
         var result = new
@@ -62,8 +68,13 @@ public class AuthenticationService(
         var user = new User { 
             Email = request.Email,
             Password = request.Password,
-            UserName = request.UserName
+            UserName = request.UserName,
+            UserRoles = [new UserRole { RoleId = 3 }]
         };
+
+        var passwordHasher = new PasswordHasher<User>();
+        var hashedPassword = passwordHasher.HashPassword(user, request.Password);
+        user.Password = hashedPassword;
 
         await userRepository.AddAsync(user);
         await unitOfWork.CommitAsync();
@@ -71,3 +82,13 @@ public class AuthenticationService(
         return Result.Success("User registered successfully");
     }
 }
+
+
+/*
+ getusers
+getuserbyid
+updateuser
+deleteuser
+assignadminrole
+revokeadminrole
+ */

@@ -17,7 +17,7 @@ public class UserRepository(BlogDbContext context) : GenericRepository<User>(con
         return await context.Users
             .Where(x => x.Email == email)
             .SelectMany(x => x.UserRoles)
-            .Select(x => x.Role.Name)
+            .Select(x => x.Role!.Name)
             .ToListAsync();
     }
 }
