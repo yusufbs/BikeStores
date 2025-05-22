@@ -34,4 +34,16 @@ public class PlatformsController : ControllerBase
 
         return Ok(platform.ToDto());
     }
+
+    [HttpPost]
+    public ActionResult<PlatformReadDto> CreatePlatform(PlatformCreateDto platformCreate)
+    {
+        var model = platformCreate.ToModel();
+        _platformRepo.CreatePlatform(model);
+        _platformRepo.SaveChanges();
+
+        var readDto = model.ToDto();
+
+        return CreatedAtRoute(nameof(GetPlatformById), new { id = readDto.Id }, readDto);
+    }
 }
