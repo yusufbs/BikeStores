@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dummy.AspDotNetCoreWebApp",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dummy.AspDotNetCoreWebApp.MVC", "DummyFrontEnds\Dummy.AspDotNetCoreWebApp.MVC\Dummy.AspDotNetCoreWebApp.MVC.csproj", "{919B982D-97B2-4C50-86B8-3F753F2C6D68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PG.MyMediatR.WebApi", "PatrickGod\PG.MyMediatR.WebApi\PG.MyMediatR.WebApi.csproj", "{57171AB8-C1B7-4374-9C3D-68A3F5DF795D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,10 @@ Global
 		{919B982D-97B2-4C50-86B8-3F753F2C6D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{919B982D-97B2-4C50-86B8-3F753F2C6D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{919B982D-97B2-4C50-86B8-3F753F2C6D68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57171AB8-C1B7-4374-9C3D-68A3F5DF795D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57171AB8-C1B7-4374-9C3D-68A3F5DF795D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57171AB8-C1B7-4374-9C3D-68A3F5DF795D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57171AB8-C1B7-4374-9C3D-68A3F5DF795D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
