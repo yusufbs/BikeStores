@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace AM.CoreIdentity.Domain.Users;
 
-public class User : IdentityUser, IAuditableEntity
+public class User : IdentityUser<string>, IAuditableEntity
 {
     public ICollection<UserClaim> Claims { get; set; }
 

@@ -8,8 +8,8 @@ namespace AM.CoreIdentity.Infrastructure.Database;
 
 public class BooksDbContext : IdentityDbContext<
     User, Role, string,
-    UserClaim, UserRole, 
-    UserLogin, RoleClaim, 
+    UserClaim, UserRole,
+    UserLogin, RoleClaim,
     UserToken>
 {
     public BooksDbContext(DbContextOptions<BooksDbContext> options)
@@ -17,8 +17,8 @@ public class BooksDbContext : IdentityDbContext<
     {
     }
 
-    public DbSet<Author> Authors { get; set; } = null;
-    public DbSet<Book> Books { get; set; } = null;
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Book> Books { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
