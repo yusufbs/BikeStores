@@ -1,0 +1,1 @@
+https://antondevtips.com/blog/how-to-customize-aspnet-core-identity-with-efcore-for-your-project-needs
