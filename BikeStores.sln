@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.12.35728.132
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11018.127 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.MVC", "BikeStores.MVC\BikeStores.MVC.csproj", "{C5CEEE2C-D9D5-4D6C-9377-C4154B2B744F}"
 EndProject
@@ -62,6 +62,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe", "Design\TicTacToe\TicTacToe.csproj", "{C27C641A-24F0-4163-8F9E-2A6FF7A85FD4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingLot", "Design\ParkingLot\ParkingLot.csproj", "{4D60873E-5ADF-4EF6-B3FF-A22F41A55356}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dummy.AspDotNetWebApp.4.7.2.Framework", "DummyFrontEnds\Dummy.AspDotNetWebApp.4.7.2.Framework\Dummy.AspDotNetWebApp.4.7.2.Framework.csproj", "{61AAE482-A1D1-4CE9-90CB-082C805E08BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -195,6 +197,10 @@ Global
 		{4D60873E-5ADF-4EF6-B3FF-A22F41A55356}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D60873E-5ADF-4EF6-B3FF-A22F41A55356}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D60873E-5ADF-4EF6-B3FF-A22F41A55356}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61AAE482-A1D1-4CE9-90CB-082C805E08BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61AAE482-A1D1-4CE9-90CB-082C805E08BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61AAE482-A1D1-4CE9-90CB-082C805E08BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61AAE482-A1D1-4CE9-90CB-082C805E08BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
