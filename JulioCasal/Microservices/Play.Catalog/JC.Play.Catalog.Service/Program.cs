@@ -6,9 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 var serviceSettings = builder.Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
 
-builder.Services.AddMongo()
+builder.Services
+    .AddMongo()
     .AddMongoRepository<Item>("items");
-
 
 // Add services to the container.
 builder.Services.AddSwaggerGen();
