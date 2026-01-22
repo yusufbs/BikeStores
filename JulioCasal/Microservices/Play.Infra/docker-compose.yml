@@ -1,0 +1,25 @@
+# docker run -d --rm --name mongo -p 27017:27017 -v mongodbdata:/data/db mongo
+# version: "3.8"
+
+###
+#History:
+#  2 docker ps
+#  3 docker stop mongo
+#  7 docker ps
+# 10 docker-compose up -d
+# 12 docker-compose down
+# 13 docker-compose up -d
+###
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodbdata:/data/db
+    # restart: unless-stopped
+
+volumes:
+  mongodbdata:

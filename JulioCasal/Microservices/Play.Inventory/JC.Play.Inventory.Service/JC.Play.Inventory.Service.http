@@ -1,0 +1,6 @@
+@JC.Play.Inventory.Service_HostAddress = http://localhost:5157
+
+GET {{JC.Play.Inventory.Service_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
