@@ -67,6 +67,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dummy.AspDotNetWebApp.4.7.2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JC.Play.Catalog.Service", "JulioCasal\Microservices\Play.Catalog\JC.Play.Catalog.Service\JC.Play.Catalog.Service.csproj", "{11FD572F-455F-4051-B2A9-886905752D3B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JC.Play.Common", "JulioCasal\Microservices\Play.Common\src\JC.Play.Common\JC.Play.Common.csproj", "{DF2CBEE5-A0F4-754A-C309-C9F824820922}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -207,6 +209,10 @@ Global
 		{11FD572F-455F-4051-B2A9-886905752D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11FD572F-455F-4051-B2A9-886905752D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11FD572F-455F-4051-B2A9-886905752D3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF2CBEE5-A0F4-754A-C309-C9F824820922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF2CBEE5-A0F4-754A-C309-C9F824820922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF2CBEE5-A0F4-754A-C309-C9F824820922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF2CBEE5-A0F4-754A-C309-C9F824820922}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

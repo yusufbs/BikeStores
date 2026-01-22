@@ -1,4 +1,5 @@
-﻿using JC.Play.Catalog.Service.Repositories;
+﻿using JC.Play.Catalog.Service.Entities;
+using JC.Play.Common;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JC.Play.Catalog.Service.Controllers
@@ -7,17 +8,17 @@ namespace JC.Play.Catalog.Service.Controllers
     [ApiController]
     public class ItemsController : ControllerBase
     {
-        private readonly IItemsRepository itemsRepository;
+        private readonly IRepository<Item> repository;
 
-        public ItemsController(IItemsRepository itemsRepository)
+        public ItemsController(IRepository<Item> repository)
         {
-            this.itemsRepository = itemsRepository;
+            this.repository = repository;
         }
 
         [HttpGet]
         public async Task<IEnumerable<ItemDto>> GetAsync()
         {
-            var items = await itemsRepository.GetAllAsync();
+            var items = await repository.GetAllAsync();
             return items.Select(item => item.AsDto());
         }
 
@@ -25,7 +26,7 @@ namespace JC.Play.Catalog.Service.Controllers
         [Route("{id:guid}")]
         public async Task<ActionResult<ItemDto>> GetByIdAsync(Guid id)
         {
-            var item = await itemsRepository.GetAsync(id);
+            var item = await repository.GetAsync(id);
             if (item == null)
             {
                 return NotFound();
@@ -37,7 +38,7 @@ namespace JC.Play.Catalog.Service.Controllers
         public async Task<ActionResult<ItemDto>> PostAsync(CreateItemDto createItemDto)
         {
             var item = new ItemDto(Guid.NewGuid(), createItemDto.Name, createItemDto.Description, createItemDto.Price, DateTimeOffset.UtcNow);
-            await itemsRepository.CreateAsync(item.AsEntity());
+            await repository.CreateAsync(item.AsEntity());
             return CreatedAtAction(nameof(GetByIdAsync), new { id = item.Id }, item);
         }
 
@@ -45,7 +46,7 @@ namespace JC.Play.Catalog.Service.Controllers
         [Route("{id:guid}")]
         public async Task<ActionResult> PutAsync(Guid id, UpdateItemDto updateItemDto)
         {
-            var existingItem = await itemsRepository.GetAsync(id);
+            var existingItem = await repository.GetAsync(id);
             if (existingItem == null)
             {
                 return NotFound();
@@ -54,7 +55,7 @@ namespace JC.Play.Catalog.Service.Controllers
             existingItem.Description = updateItemDto.Description;
             existingItem.Price = updateItemDto.Price;
             
-            await itemsRepository.UpdateAsync(existingItem);
+            await repository.UpdateAsync(existingItem);
 
             return NoContent();
         }
@@ -63,12 +64,12 @@ namespace JC.Play.Catalog.Service.Controllers
         [Route("{id:guid}")]
         public async Task<IActionResult> DeleteAsync(Guid id) 
         {
-            var existingItem = await itemsRepository.GetAsync(id);
+            var existingItem = await repository.GetAsync(id);
             if (existingItem == null)
             {
                return NotFound();
             }
-            await itemsRepository.RemoveAsync(existingItem.Id);
+            await repository.RemoveAsync(existingItem.Id);
 
             return NoContent();
         }

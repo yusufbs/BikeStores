@@ -1,6 +1,6 @@
 using JC.Play.Catalog.Service.Entities;
 
-namespace JC.Play.Catalog.Service.Repositories;
+namespace JC.Play.Catalog.Service;
 
 public static class Extensions
 {

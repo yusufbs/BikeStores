@@ -1,4 +1,4 @@
-namespace JC.Play.Catalog.Service.Settings;
+namespace JC.Play.Common.Settings;
 
 public class MongoDbSettings
 {
