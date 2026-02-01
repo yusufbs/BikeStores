@@ -1,4 +1,5 @@
 using JC.Play.Catalog.Service.Entities;
+using JC.Play.Common.MassTransit;
 using JC.Play.Common.MongoDB;
 using JC.Play.Common.Settings;
 
@@ -8,7 +9,9 @@ var serviceSettings = builder.Configuration.GetSection(nameof(ServiceSettings)).
 
 builder.Services
     .AddMongo()
-    .AddMongoRepository<Item>("items");
+    .AddMongoRepository<Item>("items")
+    .AddMassTransitWithRabbitMq();
+
 
 // Add services to the container.
 builder.Services.AddSwaggerGen();

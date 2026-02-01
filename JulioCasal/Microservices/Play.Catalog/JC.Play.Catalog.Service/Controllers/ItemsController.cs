@@ -1,5 +1,7 @@
-﻿using JC.Play.Catalog.Service.Entities;
+﻿using JC.Play.Catalog.Contracts;
+using JC.Play.Catalog.Service.Entities;
 using JC.Play.Common;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JC.Play.Catalog.Service.Controllers
@@ -9,10 +11,12 @@ namespace JC.Play.Catalog.Service.Controllers
     public class ItemsController : ControllerBase
     {
         private readonly IRepository<Item> repository;
+        private readonly IPublishEndpoint publishEndpoint;
 
-        public ItemsController(IRepository<Item> repository)
+        public ItemsController(IRepository<Item> repository, IPublishEndpoint publishEndpoint)
         {
             this.repository = repository;
+            this.publishEndpoint = publishEndpoint;
         }
 
         [HttpGet]
@@ -39,6 +43,9 @@ namespace JC.Play.Catalog.Service.Controllers
         {
             var item = new ItemDto(Guid.NewGuid(), createItemDto.Name, createItemDto.Description, createItemDto.Price, DateTimeOffset.UtcNow);
             await repository.CreateAsync(item.AsEntity());
+
+            await publishEndpoint.Publish(new CatalogItemCreated(item.Id, item.Name, item.Description));
+
             return CreatedAtAction(nameof(GetByIdAsync), new { id = item.Id }, item);
         }
 
@@ -57,6 +64,8 @@ namespace JC.Play.Catalog.Service.Controllers
             
             await repository.UpdateAsync(existingItem);
 
+            await publishEndpoint.Publish(new CatalogItemUpdated(existingItem.Id, existingItem.Name, existingItem.Description));
+
             return NoContent();
         }
 
@@ -70,6 +79,8 @@ namespace JC.Play.Catalog.Service.Controllers
                return NotFound();
             }
             await repository.RemoveAsync(existingItem.Id);
+
+            await publishEndpoint.Publish(new CatalogItemDeleted(existingItem.Id));
 
             return NoContent();
         }

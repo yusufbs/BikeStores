@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JC.Play.Common", "JC.Play.Common.csproj", "{67810834-9440-FBE1-5C55-BD5A898F7078}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67810834-9440-FBE1-5C55-BD5A898F7078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67810834-9440-FBE1-5C55-BD5A898F7078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67810834-9440-FBE1-5C55-BD5A898F7078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67810834-9440-FBE1-5C55-BD5A898F7078}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F98A2FD-0515-4860-B3C1-68EAFD00BF02}
+	EndGlobalSection
+EndGlobal
