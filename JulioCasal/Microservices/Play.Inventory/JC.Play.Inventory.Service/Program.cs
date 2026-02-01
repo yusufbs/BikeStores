@@ -6,7 +6,9 @@ using JC.Play.Inventory.Service.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var serviceSettings = builder.Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
+var configuration = builder.Configuration;
+var serviceSettings = configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
+var AllowedOriginSettings = "AllowedOrigin";
 
 builder.Services
     .AddMongo()
@@ -24,8 +26,6 @@ builder.Services.AddControllers(options =>
     options.SuppressAsyncSuffixInActionNames = false;
 });
 
-
-
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
@@ -36,7 +36,16 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
     app.UseSwagger();
-    app.UseSwaggerUI();
+    //app.UseSwaggerUI();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "JC.Play.Inventory.Service v1"));
+
+    //CORS
+    app.UseCors(builder =>
+    {
+        builder.WithOrigins(configuration[AllowedOriginSettings] ?? string.Empty)
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
 }
 
 app.UseHttpsRedirection();
