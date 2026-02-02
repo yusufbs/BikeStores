@@ -33,13 +33,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LP-Authentication", "Learni
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "lp-authentication.client", "LearningPartner\lp-authentication.client\lp-authentication.client.esproj", "{2FE6D280-9FBE-3C4F-FAD8-5EA8E70BC2AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lp.AngularBlog.Api", "LetsProgram\AngularBlog\src\Lp.AngularBlog,Api\Lp.AngularBlog.Api.csproj", "{E90A0420-DC5B-4983-AF28-B32ED19A21AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lp.AngularBlog.Api", "LetsProgram\AngularBlog\src\Lp.AngularBlog.Api\Lp.AngularBlog.Api.csproj", "{E90A0420-DC5B-4983-AF28-B32ED19A21AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lp.AngularBlog.Application", "LetsProgram\AngularBlog\src\Lp.AngularBlog,Application\Lp.AngularBlog.Application.csproj", "{B4811034-5BF2-48DA-9A39-5488982EF12F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lp.AngularBlog.Application", "LetsProgram\AngularBlog\src\Lp.AngularBlog.Application\Lp.AngularBlog.Application.csproj", "{B4811034-5BF2-48DA-9A39-5488982EF12F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lp.AngularBlog.Domain", "LetsProgram\AngularBlog\src\Lp.AngularBlog,Domain\Lp.AngularBlog.Domain.csproj", "{16E8B7F5-4BC0-4A7C-B79B-8D3F79BCA5DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lp.AngularBlog.Domain", "LetsProgram\AngularBlog\src\Lp.AngularBlog.Domain\Lp.AngularBlog.Domain.csproj", "{16E8B7F5-4BC0-4A7C-B79B-8D3F79BCA5DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lp.AngularBlog.Infrastructure", "LetsProgram\AngularBlog\src\Lp.AngularBlog,Infrastructure\Lp.AngularBlog.Infrastructure.csproj", "{93BC8F60-8C0B-4562-B00A-90D4AA4A5BD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lp.AngularBlog.Infrastructure", "LetsProgram\AngularBlog\src\Lp.AngularBlog.Infrastructure\Lp.AngularBlog.Infrastructure.csproj", "{93BC8F60-8C0B-4562-B00A-90D4AA4A5BD2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dummy.BlazorWebApp", "DummyFrontEnds\Dummy.BlazorWebApp\Dummy.BlazorWebApp.csproj", "{9D3FB48E-683F-40DC-9A7B-185C2ABE3FFE}"
 EndProject
