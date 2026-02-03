@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../../Design/ParkingLot/ParkingLot.csproj" />
+  <Project Path="../../Design/TicTacToe/TicTacToe.csproj" />
+</Solution>
