@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../../DummyFrontEnds/Dummy.AspDotNetCoreWebApp.MVC/Dummy.AspDotNetCoreWebApp.MVC.csproj" />
+  <Project Path="../../DummyFrontEnds/Dummy.AspDotNetCoreWebApp/Dummy.AspDotNetCoreWebApp.csproj" />
+  <Project Path="../../DummyFrontEnds/Dummy.AspDotNetWebApp.4.7.2.Framework/Dummy.AspDotNetWebApp.4.7.2.Framework.csproj" Id="61aae482-a1d1-4ce9-90cb-082c805e08bc" />
+  <Project Path="../../DummyFrontEnds/Dummy.BlazorWebApp/Dummy.BlazorWebApp.csproj" />
+</Solution>
