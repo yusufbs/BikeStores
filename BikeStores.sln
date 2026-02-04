@@ -3,32 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.0.11018.127
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.MVC", "BikeStores.MVC\BikeStores.MVC.csproj", "{C5CEEE2C-D9D5-4D6C-9377-C4154B2B744F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.Domain", "BikeStores.Domain\BikeStores.Domain.csproj", "{7D4F6F25-AC24-4E57-B602-F6C2F5FB63CB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.Presentation.Generic", "BikeStores.Presentation.Generic\BikeStores.Presentation.Generic.csproj", "{7279674F-F33E-44A8-ACE6-BBDB97B1EF44}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.WebApi", "BikeStores.WebApi\BikeStores.WebApi.csproj", "{3626171B-F238-4084-A535-CD7D606C2D06}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.WebApi.Controllers", "BikeStores.WebApi.Controllers\BikeStores.WebApi.Controllers.csproj", "{08C91A46-2986-4EB3-8595-7FACB59E85B9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.WebApi.Swagger", "BikeStores.WebApi.Swagger\BikeStores.WebApi.Swagger.csproj", "{AC69E6B4-489D-44D1-9D73-F87FC55962B5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.WebApi.ReDoc", "BikeStores.WebApi.ReDoc\BikeStores.WebApi.ReDoc.csproj", "{9B0D5EDE-DE6B-49E1-904E-616B676092FD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.WebApi.NSwag", "BikeStores.WebApi.NSwag\BikeStores.WebApi.NSwag.csproj", "{F9540BC1-C077-48FE-AB3F-0E588B6691E4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.WebApi.Scalar", "BikeStores.WebApi.Scalar\BikeStores.WebApi.Scalar.csproj", "{93A6EAFE-1F4B-4744-8425-FFF21952198F}"
-EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "bikestores.angular.client", "BikeStores.Angular\bikestores.angular.client\bikestores.angular.client.esproj", "{33CF15D2-EFC7-9B82-3C0A-9468DE5119E8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.Angular.Server", "BikeStores.Angular\BikeStores.Angular.Server\BikeStores.Angular.Server.csproj", "{B9385165-3192-43AE-BBCF-CBD9B3B8B599}"
-EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "bikestores.react.client", "BikeStores.React\bikestores.react.client\bikestores.react.client.esproj", "{55CF7E5E-EEB8-311D-223B-77B4FDB4B70F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStores.React.Server", "BikeStores.React\BikeStores.React.Server\BikeStores.React.Server.csproj", "{EDB8D5A8-3249-4663-8934-9FDD49CA1218}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LP-Authentication", "LearningPartner\LP-Authentication\LP-Authentication.csproj", "{D9D2B0CA-5EC9-4A01-9C93-DE1217122EE6}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "lp-authentication.client", "LearningPartner\lp-authentication.client\lp-authentication.client.esproj", "{2FE6D280-9FBE-3C4F-FAD8-5EA8E70BC2AF}"
@@ -67,62 +41,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C5CEEE2C-D9D5-4D6C-9377-C4154B2B744F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C5CEEE2C-D9D5-4D6C-9377-C4154B2B744F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C5CEEE2C-D9D5-4D6C-9377-C4154B2B744F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C5CEEE2C-D9D5-4D6C-9377-C4154B2B744F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7D4F6F25-AC24-4E57-B602-F6C2F5FB63CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7D4F6F25-AC24-4E57-B602-F6C2F5FB63CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7D4F6F25-AC24-4E57-B602-F6C2F5FB63CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7D4F6F25-AC24-4E57-B602-F6C2F5FB63CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7279674F-F33E-44A8-ACE6-BBDB97B1EF44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7279674F-F33E-44A8-ACE6-BBDB97B1EF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7279674F-F33E-44A8-ACE6-BBDB97B1EF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7279674F-F33E-44A8-ACE6-BBDB97B1EF44}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3626171B-F238-4084-A535-CD7D606C2D06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3626171B-F238-4084-A535-CD7D606C2D06}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3626171B-F238-4084-A535-CD7D606C2D06}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3626171B-F238-4084-A535-CD7D606C2D06}.Release|Any CPU.Build.0 = Release|Any CPU
-		{08C91A46-2986-4EB3-8595-7FACB59E85B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08C91A46-2986-4EB3-8595-7FACB59E85B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08C91A46-2986-4EB3-8595-7FACB59E85B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08C91A46-2986-4EB3-8595-7FACB59E85B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AC69E6B4-489D-44D1-9D73-F87FC55962B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC69E6B4-489D-44D1-9D73-F87FC55962B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC69E6B4-489D-44D1-9D73-F87FC55962B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC69E6B4-489D-44D1-9D73-F87FC55962B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B0D5EDE-DE6B-49E1-904E-616B676092FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B0D5EDE-DE6B-49E1-904E-616B676092FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B0D5EDE-DE6B-49E1-904E-616B676092FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B0D5EDE-DE6B-49E1-904E-616B676092FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9540BC1-C077-48FE-AB3F-0E588B6691E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9540BC1-C077-48FE-AB3F-0E588B6691E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9540BC1-C077-48FE-AB3F-0E588B6691E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9540BC1-C077-48FE-AB3F-0E588B6691E4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{93A6EAFE-1F4B-4744-8425-FFF21952198F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93A6EAFE-1F4B-4744-8425-FFF21952198F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93A6EAFE-1F4B-4744-8425-FFF21952198F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93A6EAFE-1F4B-4744-8425-FFF21952198F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33CF15D2-EFC7-9B82-3C0A-9468DE5119E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33CF15D2-EFC7-9B82-3C0A-9468DE5119E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33CF15D2-EFC7-9B82-3C0A-9468DE5119E8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{33CF15D2-EFC7-9B82-3C0A-9468DE5119E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33CF15D2-EFC7-9B82-3C0A-9468DE5119E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33CF15D2-EFC7-9B82-3C0A-9468DE5119E8}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{B9385165-3192-43AE-BBCF-CBD9B3B8B599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9385165-3192-43AE-BBCF-CBD9B3B8B599}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B9385165-3192-43AE-BBCF-CBD9B3B8B599}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9385165-3192-43AE-BBCF-CBD9B3B8B599}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55CF7E5E-EEB8-311D-223B-77B4FDB4B70F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55CF7E5E-EEB8-311D-223B-77B4FDB4B70F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55CF7E5E-EEB8-311D-223B-77B4FDB4B70F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{55CF7E5E-EEB8-311D-223B-77B4FDB4B70F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55CF7E5E-EEB8-311D-223B-77B4FDB4B70F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55CF7E5E-EEB8-311D-223B-77B4FDB4B70F}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{EDB8D5A8-3249-4663-8934-9FDD49CA1218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EDB8D5A8-3249-4663-8934-9FDD49CA1218}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EDB8D5A8-3249-4663-8934-9FDD49CA1218}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EDB8D5A8-3249-4663-8934-9FDD49CA1218}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D9D2B0CA-5EC9-4A01-9C93-DE1217122EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D9D2B0CA-5EC9-4A01-9C93-DE1217122EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9D2B0CA-5EC9-4A01-9C93-DE1217122EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -12,11 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BikeStores.WebApi.Controllers\BikeStores.WebApi.Controllers.csproj" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\BikeStores.Domain\BikeStores.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Lp.AngularBlog,Domain\Lp.AngularBlog.Domain.csproj" />
+    <ProjectReference Include="..\Lp.AngularBlog.Domain\Lp.AngularBlog.Domain.csproj" />
   </ItemGroup>
 
 </Project>

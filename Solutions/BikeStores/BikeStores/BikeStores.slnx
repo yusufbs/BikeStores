@@ -1,0 +1,21 @@
+<Solution>
+  <Project Path="../../../BikeStores.Angular/bikestores.angular.client/bikestores.angular.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="../../../BikeStores.Angular/BikeStores.Angular.Server/BikeStores.Angular.Server.csproj" />
+  <Project Path="../../../BikeStores.Domain/BikeStores.Domain.csproj" />
+  <Project Path="../../../BikeStores.MVC/BikeStores.MVC.csproj" />
+  <Project Path="../../../BikeStores.Presentation.Generic/BikeStores.Presentation.Generic.csproj" />
+  <Project Path="../../../BikeStores.React/bikestores.react.client/bikestores.react.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="../../../BikeStores.React/BikeStores.React.Server/BikeStores.React.Server.csproj" />
+  <Project Path="../../../BikeStores.WebApi.Controllers/BikeStores.WebApi.Controllers.csproj" />
+  <Project Path="../../../BikeStores.WebApi.NSwag/BikeStores.WebApi.NSwag.csproj" />
+  <Project Path="../../../BikeStores.WebApi.ReDoc/BikeStores.WebApi.ReDoc.csproj" />
+  <Project Path="../../../BikeStores.WebApi.Scalar/BikeStores.WebApi.Scalar.csproj" />
+  <Project Path="../../../BikeStores.WebApi.Swagger/BikeStores.WebApi.Swagger.csproj" />
+  <Project Path="../../../BikeStores.WebApi/BikeStores.WebApi.csproj" />
+</Solution>
