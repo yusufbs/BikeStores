@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../../../LetsProgram/AngularBlog/src/Lp.AngularBlog.Api/Lp.AngularBlog.Api.csproj" />
+  <Project Path="../../../LetsProgram/AngularBlog/src/Lp.AngularBlog.Application/Lp.AngularBlog.Application.csproj" />
+  <Project Path="../../../LetsProgram/AngularBlog/src/Lp.AngularBlog.Domain/Lp.AngularBlog.Domain.csproj" />
+  <Project Path="../../../LetsProgram/AngularBlog/src/Lp.AngularBlog.Infrastructure/Lp.AngularBlog.Infrastructure.csproj" />
+</Solution>
