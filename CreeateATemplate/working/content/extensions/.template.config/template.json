@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Me",
+  "classifications": ["Common", "Code"],
+  "identity": "ExampleTemplate.StringExtensions",
+  "name": "Example templates: string extensions",
+  "shortName": "stringext",
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "symbols": {
+    "ClassName": {
+      "type": "parameter",
+      "description": "The name of the code file and class.",
+      "datatype": "text",
+      "replaces": "StringExtensions",
+      "fileRename": "StringExtensions",
+      "defaultValue": "StringExtensions"
+    }
+  }
+}
+
+// based on the official documentation:
+// https://learn.microsoft.com/en-us/dotnet/core/tutorials/cli-templates-create-item-template
+
+// in working folder
+// to install the template use the following command:
+// dotnet new -i ./working/content/extensions
+
+// to create a new file using the template use the following command:
+// Using test folder as output
+// dotnet new console
+// dotnet run
+// dotnet new stringext
+// dotnet run
+
+// back in working folder
+// to uninstall the template use the following command:
+//  dotnet new uninstall .\

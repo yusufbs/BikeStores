@@ -19,6 +19,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Lp.AngularBlog,Infrastructure\Lp.AngularBlog.Infrastructure.csproj" />
+    <ProjectReference Include="..\Lp.AngularBlog.Application\Lp.AngularBlog.Application.csproj" />
+    <ProjectReference Include="..\Lp.AngularBlog.Infrastructure\Lp.AngularBlog.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Me",
+  "classifications": ["Common", "Console"],
+  "identity": "ExampleTemplate.AsyncProject",
+  "name": "Example templates: async project",
+  "shortName": "consoleasync",
+  "sourceName": "consoleasync",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
+
+// refer to docs
+// https://learn.microsoft.com/en-us/dotnet/core/tutorials/cli-templates-create-project-template
+
+// in working folder
+//   dotnet new install .\
+
+// in text folder
+// dotnet new consoleasync -n MyProject
+
+// to run the project
+// dotnet run --project .\MyProject.csproj
