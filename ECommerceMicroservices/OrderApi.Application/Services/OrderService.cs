@@ -23,7 +23,8 @@ public class OrderService(
 
     public async Task<AppUserDTO> GetUser(int userId)
     {
-        var getUser = await httpClient.GetAsync($"/api/products/{userId}");
+        // var getUser = await httpClient.GetAsync($"/api/products/{userId}");
+        var getUser = await httpClient.GetAsync($"http://localhost:5000/api/authentication/{userId}"); 
         if (!getUser.IsSuccessStatusCode)
             return null!;
 
