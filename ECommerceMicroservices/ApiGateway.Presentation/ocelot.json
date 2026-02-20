@@ -1,0 +1,184 @@
+{
+  "Routes": [
+    // Authentication API
+    {
+      "DownstreamPathTemplate": "/api/authentication/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/authentication/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST"],
+      "RateLimitOptions": {
+        "ClientWhiteList": [],
+        "EnableRateLimit": true,
+        "Period": "60s",
+        "Limit": 1,
+        "PeriodTimespan": 10
+        // "ClientIdHeader": "X-ClientId",
+        // "QuotaExceededMessage": "Rate limit exceeded. Please try again later.",
+        // "HttpStatusCode": 429,
+        // "GeneralRules": [
+        //   {
+        //     "Endpoint": "*",
+        //     "Period": "1m",
+        //     "Limit": 1
+        //   }
+        // ]
+      }
+    },
+
+    // Product API
+    // GET Method
+    {
+      "DownstreamPathTemplate": "/api/products/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/products/",
+      "UpstreamHttpMethod": ["GET"],
+      "FileCacheOptions": {
+        "TtlSeconds": 60,
+        "Region": "default",
+        "Header": "eCommerce-Cacheing-Control"
+        // "Handle404AsNotFound": true,
+        // "AllowCachedResponsesWhenDown": true,
+        // "StatusCodesToCache": [200],
+        // "MethodsToCache": ["GET"],
+        // "VaryByQueryKeys": ["*"],
+        // "VaryByHeaderKeys": ["*"],
+        // "VaryByCookieKeys": ["*"],
+        // "VaryByClaimsKeys": ["*"],
+        // "VaryByAuthenticationState": true,
+        // "VaryByUserId": true,
+        // "VaryByTenantId": true,
+        // "VaryByCulture": true,
+        // "VaryByUserAgent": true,
+      }
+    },
+    // GetProduct By Id
+    {
+      "DownstreamPathTemplate": "/api/products/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/products/{id}",
+      "UpstreamHttpMethod": ["GET"],
+      "FileCacheOptions": {
+        "TtlSeconds": 60,
+        "Region": "default",
+        "Header": "eCommerce-Cacheing-Control"
+      }
+    },
+
+    // Product => Post Put and Delete Methods
+
+    {
+      "DownstreamPathTemplate": "/api/products/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/products/{everything}",
+      "UpstreamHttpMethod": ["POST", "PUT", "DELETE"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+
+    // Order API
+    // GET Method
+    {
+      "DownstreamPathTemplate": "/api/orders/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/api/orders/",
+      "UpstreamHttpMethod": ["GET"],
+      "FileCacheOptions": {
+        "TtlSeconds": 60,
+        "Region": "default",
+        "Header": "eCommerce-Cacheing-Control"
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+    // Get By Id
+    {
+      "DownstreamPathTemplate": "/api/orders/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/api/orders/{id}",
+      "UpstreamHttpMethod": ["GET"],
+      "FileCacheOptions": {
+        "TtlSeconds": 60,
+        "Region": "default",
+        "Header": "eCommerce-Cacheing-Control"
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+
+    // Order => Post Put and Delete Methods
+
+    {
+      "DownstreamPathTemplate": "/api/orders/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/api/orders/{everything}",
+      "UpstreamHttpMethod": ["POST", "PUT", "DELETE"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5003",
+    "RateLimitOptions": {
+      // "ClientIdHeader": "X-ClientId",
+      "QuotaExceededMessage": "Rate limit exceeded. Please try again later."
+      // "HttpStatusCode": 429,
+      // "GeneralRules": [
+      //   {
+      //     "Endpoint": "*",
+      //     "Period": "1m",
+      //     "Limit": 100
+      //   }
+      // ]
+    }
+  }
+}

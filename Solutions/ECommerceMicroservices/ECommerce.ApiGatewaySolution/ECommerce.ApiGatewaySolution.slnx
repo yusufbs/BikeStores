@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../../../ECommerceMicroservices/ApiGateway.Presentation/ApiGateway.Presentation.csproj" />
+  <Project Path="../../../ECommerceMicroservices/eCommerce.SharedLibrary/eCommerce.SharedLibrary.csproj" />
+</Solution>
